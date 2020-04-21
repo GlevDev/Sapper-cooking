@@ -15,7 +15,7 @@
 	}
 </style>
 
-<Search {segment}/>
+<Search {segment} />
 
 <main>
 	<slot></slot>

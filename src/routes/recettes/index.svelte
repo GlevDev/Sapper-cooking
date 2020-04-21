@@ -8,6 +8,7 @@
 
 <script>
 	export let recettes;
+		
 </script>
 
 <style>

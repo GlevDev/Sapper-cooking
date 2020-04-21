@@ -1,4 +1,4 @@
-import recettes from '../_recettes.js';
+import recettes from './_recettes.js';
 
 const contents = JSON.stringify(recettes.map(recette => {
 	return {

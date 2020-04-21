@@ -1,13 +1,23 @@
 <script>
+	import recettes from '../routes/_recettes.js';
+	import stores from '../store.js';
 	export let segment;
 
 	let motCle;
 	let typeRech;
 
-	function rechercheRecette() {
-		if(motCle) {
-			
+	function recherche() {
+		if(motCle && typeRech === "recette") {
+			rechercheRecette();
 		}
+		if(motCle && typeRech === "ingredient") {
+			rechercheIngredient();
+		}
+	}
+
+	function rechercheRecette() {
+		let resultRecettes = recettes.filter(recette => recette.title.toLowerCase().includes(motCle.toLowerCase()) === true);
+		console.log(resultRecettes);
 	}
 </script>
 
@@ -74,11 +84,11 @@
 <nav>
 	<div class="barre-recherche">
 		<select name="TypeRecherche" id="type-recherche" bind:value={typeRech}>
-			<option value="Recette">Recherche par Recette</option>
-			<option value="Ingrédient">Recherche par Ingrédient</option>
+			<option value="recette">Recherche par Recette</option>
+			<option value="ingredient">Recherche par Ingrédient</option>
 		</select>
 		<input type="text" id="recherche" name="recherche" bind:value={motCle}>
-		<button on:click={rechercheRecette}>Rechercher</button>
+		<button on:click={recherche}>Rechercher</button>
 	</div>
 	<div></div>
 </nav>

@@ -1,3 +1,17 @@
+<script context="module">
+	export function preload({ params, query }) {
+		return this.fetch(`index.json`).then(r => r.json()).then(recettes => {
+			return { recettes };
+		});
+	}
+</script>
+
+<script>
+	export let recettes;
+
+	console.log(recettes);
+</script>
+
 <style>
 	h1, figure, p {
 		text-align: center;
@@ -33,14 +47,5 @@
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Mes recettes de cuisine</title>
 </svelte:head>
-
-<h1>Great success!</h1>
-
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
