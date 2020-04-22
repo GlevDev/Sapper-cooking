@@ -1,10 +1,12 @@
 <script>
 	import recettes from '../routes/_recettes.js';
-	import stores from '../store.js';
+	import recipes from '../store.js';
 	export let segment;
 
 	let motCle;
 	let typeRech;
+
+
 
 	function recherche() {
 		if(motCle && typeRech === "recette") {
@@ -18,6 +20,7 @@
 	function rechercheRecette() {
 		let resultRecettes = recettes.filter(recette => recette.title.toLowerCase().includes(motCle.toLowerCase()) === true);
 		console.log(resultRecettes);
+		recipes.setRecipes(resultRecettes);
 	}
 </script>
 

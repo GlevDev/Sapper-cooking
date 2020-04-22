@@ -1,5 +1,6 @@
 const recettes = [
   {
+    id: Math.random().split(".")[1],
     title: "Caramel au beurre salé",
     ingredients: [
       {

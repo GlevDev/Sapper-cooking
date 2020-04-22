@@ -4,8 +4,8 @@ const recipes = writable([]);
 
 const RecipeStore = {
   subscribe: recipes.subscribe,
-  setMeetups: (meetupArray) => {
-    meetups.set(meetupArray);
+  setRecipes: (Array) => {
+    recipes.set(Array);
   }
 };
 
