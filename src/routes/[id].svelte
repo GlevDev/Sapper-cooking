@@ -62,6 +62,7 @@
       <img src={recette.image} alt={recette.title} class="img" />
     </div>
     <div class="ingredients">
+      <span>Ingredients :</span>
       <ul>
         {#each recette.ingredients as ingredient}
           <li>{ingredient.article} ({ingredient.qty})</li>
